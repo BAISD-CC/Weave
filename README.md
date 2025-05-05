@@ -1,5 +1,5 @@
 # Software Requirements Specification
-## For <project name>
+## For Weave
 
 Version 0.1  
 Prepared by J. Kruskie 
@@ -59,13 +59,13 @@ Table of Contents
 
 ## 1. Introduction
 
-This document defines the software requirements specification (SRS) for the "Relay" project — an internal platform and API service developed to support a high school computer programming classroom. It outlines the purpose, scope, definitions, references, and structure of the document to provide a comprehensive overview for stakeholders, developers, and future contributors.
+This document defines the software requirements specification (SRS) for the "Weave" project — an internal platform and API service developed to support a high school computer programming classroom. It outlines the purpose, scope, definitions, references, and structure of the document to provide a comprehensive overview for stakeholders, developers, and future contributors.
 
 ### 1.1 Document Purpose
 
-The purpose of this SRS is to formally describe the functional and non-functional requirements of Relay, a centralized API-driven system for classroom data management and student development. This document is intended for:
+The purpose of this SRS is to formally describe the functional and non-functional requirements of Weave, a centralized API-driven system for classroom data management and student development. This document is intended for:
 
-- Software developers and system architects designing and implementing Relay
+- Software developers and system architects designing and implementing Weave
 - Instructors and administrators integrating the system into classroom operations
 - Students interacting with the public API endpoints
 - Project reviewers and maintainers evaluating the scope and direction of the platform
@@ -74,7 +74,7 @@ This SRS serves as a reference point throughout the software development lifecyc
 
 ### 1.2 Product Scope
 
-Relay is a modular, extensible backend platform that replaces the legacy "Wayback Machine" archive system. It introduces a centralized API-first architecture to manage student portfolios, classroom project data, and realistic dummy datasets. Relay functions as the backbone of daily operations and educational workflows in the computer science classroom.
+Weave is a modular, extensible backend platform that replaces the legacy "Wayback Machine" archive system. It introduces a centralized API-first architecture to manage student portfolios, classroom project data, and realistic dummy datasets. Weave functions as the backbone of daily operations and educational workflows in the computer science classroom.
 
 Key goals of the product include:
 
@@ -83,7 +83,7 @@ Key goals of the product include:
 - Hosting robust fake datasets (e.g., student records, math scores, financials) for use in coding lessons
 - Enabling future expansion for features like certification tracking and device inventory management
 
-Relay supports RESTful interaction, secure data access, and classroom-aligned data structures, helping educators simulate real-world development environments and support student learning.
+Weave supports RESTful interaction, secure data access, and classroom-aligned data structures, helping educators simulate real-world development environments and support student learning.
 
 ### 1.3 Definitions, Acronyms and Abbreviations
 
@@ -96,7 +96,7 @@ Relay supports RESTful interaction, secure data access, and classroom-aligned da
 | REST | Representational State Transfer — an architectural style for networked applications |
 | JSON | JavaScript Object Notation — a lightweight data-interchange format |
 | UI | User Interface |
-| Relay | The name of the internal classroom platform/API described in this SRS |
+| Weave | The name of the internal classroom platform/API described in this SRS |
 
 ### 1.4 References
 
@@ -109,23 +109,23 @@ Relay supports RESTful interaction, secure data access, and classroom-aligned da
 
 This SRS is structured to cover the following:
 
-- **Section 1: Introduction** — Overview and foundational information about Relay and this document
+- **Section 1: Introduction** — Overview and foundational information about Weave and this document
 - **Section 2: Product Overview** — Describes the system from a user and system perspective
 - **Section 3: Requirements** — Detailed software requirements, including interfaces, functions, and constraints
 - **Section 4: Verification** — Planned strategies for verifying compliance with the requirements
 - **Section 5: Appendices** — Additional supporting information or future expansion notes
 
-This structure follows the IEEE standard format and is intended to guide both the development and review process of the Relay project.
+This structure follows the IEEE standard format and is intended to guide both the development and review process of the Weave project.
 
 ## 2. Product Overview
 
-This section outlines the context, capabilities, limitations, and assumptions surrounding the development and deployment of the Relay system. Relay is positioned as a foundational component of the high school programming classroom's digital infrastructure, serving both instructional and student needs via a centralized API.
+This section outlines the context, capabilities, limitations, and assumptions surrounding the development and deployment of the Weave system. Weave is positioned as a foundational component of the high school programming classroom's digital infrastructure, serving both instructional and student needs via a centralized API.
 
 ### 2.1 Product Perspective
 
-Relay is a replacement and expansion of the previously developed "Wayback Machine" project archive. Unlike its predecessor, Relay is designed as a modular, extensible, and API-driven backend platform. It is intended to serve as the data and service layer for various frontend classroom tools, student assignments, and administrative functions.
+Weave is a replacement and expansion of the previously developed "Wayback Machine" project archive. Unlike its predecessor, Weave is designed as a modular, extensible, and API-driven backend platform. It is intended to serve as the data and service layer for various frontend classroom tools, student assignments, and administrative functions.
 
-Relay is self-contained but may interact with external systems, such as GitHub, Active Directory services, and future classroom tools that consume its public APIs.
+Weave is self-contained but may interact with external systems, such as GitHub, Active Directory services, and future classroom tools that consume its public APIs.
 
 Subsystems include:
 
@@ -139,7 +139,7 @@ All communication is expected to occur via RESTful JSON endpoints over HTTP(S), 
 
 ### 2.2 Product Functions
 
-Relay provides the following high-level features:
+Weave provides the following high-level features:
 
 - **Project Archive (Wayback Replacement)**
   - Add, update, delete, and list student projects
@@ -188,7 +188,7 @@ Relay provides the following high-level features:
 
 ### 2.4 User Characteristics
 
-Relay users can be categorized into the following groups:
+Weave users can be categorized into the following groups:
 
 - **Students**
   - Technical proficiency: Beginner to intermediate
@@ -230,15 +230,15 @@ Functions like certifications and device inventory are scoped for future develop
 
 ## 3. Requirements
 
-This section defines the functional and non-functional software requirements for Relay, including interfaces, system behavior, quality attributes, and design considerations. Requirements are specified to support the successful implementation, verification, and maintainability of the system.
+This section defines the functional and non-functional software requirements for Weave, including interfaces, system behavior, quality attributes, and design considerations. Requirements are specified to support the successful implementation, verification, and maintainability of the system.
 
 ### 3.1 External Interfaces
 
 #### 3.1.1 User Interfaces
 
-While Relay is primarily an API service, a supporting React-based frontend may be developed for administrative use and public viewing. Key UI-related requirements include:
+While Weave is primarily an API service, a supporting React-based frontend may be developed for administrative use and public viewing. Key UI-related requirements include:
 
-- The frontend shall be built using React and consume Relay's API endpoints.
+- The frontend shall be built using React and consume Weave's API endpoints.
 - Public-facing components shall display student projects, dummy datasets, and announcements.
 - Admin views (protected) shall allow:
   - Adding/editing/deleting projects
@@ -248,7 +248,7 @@ While Relay is primarily an API service, a supporting React-based frontend may b
 
 #### 3.1.2 Hardware Interfaces
 
-Relay does not interface directly with hardware. However, the planned **Device Inventory** module will include metadata storage for issued devices. In that context:
+Weave does not interface directly with hardware. However, the planned **Device Inventory** module will include metadata storage for issued devices. In that context:
 
 - The system shall allow admin users to record hardware attributes (e.g., serial number, model, condition).
 - There are no expectations for physical integration or control of devices.
@@ -256,13 +256,13 @@ Relay does not interface directly with hardware. However, the planned **Device I
 #### 3.1.3 Software Interfaces
 
 - **ASP.NET Core Web API**
-  - Relay shall be implemented using ASP.NET Core for the backend API.
+  - Weave shall be implemented using ASP.NET Core for the backend API.
   - Endpoints shall follow RESTful conventions (`/api/resource/{id}`).
   - The system shall return JSON-formatted responses (UTF-8 encoded).
   - Middleware shall enforce security, logging, and error handling.
 
 - **React Frontend (Optional)**
-  - The frontend shall consume the Relay API via HTTP(S).
+  - The frontend shall consume the Weave API via HTTP(S).
   - Axios or Fetch API may be used for data fetching.
   - Authentication tokens (if used) must be securely stored (e.g., HttpOnly cookies or secure local storage).
 
@@ -276,7 +276,7 @@ Relay does not interface directly with hardware. However, the planned **Device I
 
 ### 3.2 Functional
 
-Relay shall offer the following functional capabilities:
+Weave shall offer the following functional capabilities:
 
 #### 3.2.1 Project Archive
 - Admins can:
@@ -352,7 +352,7 @@ Relay shall offer the following functional capabilities:
 ### 3.5 Design and Implementation
 
 #### 3.5.1 Installation
-- Relay must be deployable using:
+- Weave must be deployable using:
   - Docker Compose
   - .NET CLI (`dotnet publish`, `dotnet run`)
 - Environment variables shall manage configuration (e.g., DB connection, JWT secret)
@@ -373,11 +373,11 @@ Relay shall offer the following functional capabilities:
   - Code samples and tests
 
 #### 3.5.5 Portability
-- Relay shall run on Windows, macOS, and Linux (via .NET Core cross-platform support)
+- Weave shall run on Windows, macOS, and Linux (via .NET Core cross-platform support)
 - React frontend must build and run with Node.js on any OS
 
 #### 3.5.6 Cost
-- Relay is an internal educational project; hosting and development costs should be minimal or covered by school infrastructure
+- Weave is an internal educational project; hosting and development costs should be minimal or covered by school infrastructure
 - Optional cloud deployments must use free-tier or school-licensed services when possible
 
 #### 3.5.7 Deadline
@@ -392,7 +392,7 @@ Relay shall offer the following functional capabilities:
 
 ## 4. Verification
 
-Verification activities ensure that Relay meets all specified requirements and functions correctly in its intended classroom environment. Each requirement outlined in Section 3 must be testable through one or more of the following methods:
+Verification activities ensure that Weave meets all specified requirements and functions correctly in its intended classroom environment. Each requirement outlined in Section 3 must be testable through one or more of the following methods:
 
 ### 4.1 Verification Strategies
 
@@ -446,7 +446,7 @@ The following features are scoped for future implementation and not part of the 
   - Hardware tracking and checkout/return logging
   - Historical views of device assignments
 
-These features should be implemented as self-contained modules that integrate with the core Relay API using consistent design patterns.
+These features should be implemented as self-contained modules that integrate with the core Weave API using consistent design patterns.
 
 ### 5.2 Developer Setup Notes
 
