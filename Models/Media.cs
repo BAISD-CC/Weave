@@ -5,10 +5,13 @@ namespace Weave.Models
     public class Media
     {
         public Guid Id { get; set; } = Guid.NewGuid();
+
         [Required]
         public string FileName { get; set; } = null!;
+
         [Required]
         public string Url { get; set; } = null!;
+        
         [Required]
         public string MediaType { get; set; } = null!;
 
