@@ -6,11 +6,11 @@ namespace Weave.Models {
         public Guid Id { get; set; } = Guid.NewGuid();
 
         [Required]
-        public string Organization { get; set; } = null;
+        public string Organization { get; set; } = null!;
 
         [Required]
         public string Name { get; set; } = null!;
-        
+
         public DateTime DateIssued { get; set; }
 
         public Guid StudentId { get; set; }
