@@ -1,6 +1,5 @@
 using Weave.Routes;
 using Weave.Services;
-using Weave.Models;
 using Weave.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,14 +21,14 @@ builder.Services.AddCors(options =>
 
 // Add services
 builder.Services.AddScoped<IDataBreachService, DataBreachService>();
+builder.Services.AddScoped<IInfoService, InfoService>();
 
 var app = builder.Build();
-
-app.MapGet("/", () => "Hello World!");
 
 app.UseSwagger();
 app.UseSwaggerUI();
 
+app.MapInfoRoutes();
 app.MapDataBreachRoutes();
 
 app.Run();

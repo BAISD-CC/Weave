@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weave API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 12px #00ff99; }
+            50% { box-shadow: 0 0 24px #00ff99aa; }
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 flex items-center justify-center h-screen px-4">
+<div class="bg-gray-900 rounded-2xl p-8 shadow-lg max-w-xl w-full animate-fade-in">
+    <h1 class="text-4xl font-bold text-green-400 mb-4 animate-bounce">Weave</h1>
+    <p class="text-lg text-gray-300 mb-6">
+        A classroom-focused API that powers certifications, projects, and educational dummy data for programming assignments.
+    </p>
+    <p class="text-sm text-gray-500 italic mb-6">— Mr. Kruskie and Students</p>
+
+    <div class="bg-gray-800 text-green-300 font-mono text-sm p-4 rounded-lg overflow-x-auto max-w-full">
+<pre class="whitespace-pre-wrap break-words m-0">
+{
+"name": "Weave",
+"description": "A classroom-focused API that powers management, NFC inventory tracking, project archives, and educational dummy data for programming assignments.",
+"author": "Mr. Kruskie and Students"
+}
+</pre>
+    </div>
+
+    <div class="mt-6 text-center">
+        <a href="/swagger"
+           class="inline-block bg-green-500 text-gray-900 font-semibold px-6 py-3 rounded-lg hover:bg-green-400 transition transform hover:-translate-y-1 hover:scale-105"
+           style="animation: pulse-glow 2s infinite;">
+            View API Docs
+        </a>
+    </div>
+</div>
+
+<script>
+    // Tailwind CSS animation hook
+    tailwind.config = {
+        theme: {
+            extend: {
+                animation: {
+                    'fade-in': 'fadeIn 1s ease-out forwards',
+                    'bounce': 'bounce 1s infinite'
+                },
+                keyframes: {
+                    fadeIn: {
+                        '0%': { opacity: 0, transform: 'translateY(20px)' },
+                        '100%': { opacity: 1, transform: 'translateY(0)' }
+                    }
+                }
+            }
+        }
+    };
+</script>
+</body>
+</html>
